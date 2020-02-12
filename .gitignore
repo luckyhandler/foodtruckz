@@ -6,3 +6,4 @@ out
 src/main/kotlin/foodtruckz.json
 src/main/kotlin/Keys.kt
 src/main/kotlin/Hooks.kt
+local.properties

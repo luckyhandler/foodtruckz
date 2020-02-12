@@ -14,12 +14,15 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import java.nio.charset.StandardCharsets
 import java.time.ZonedDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
-private const val longitude: String = "11.017400"
-private const val latitude: String = "49.429017"
+const val longitude: String = "11.017400"
+const val latitude: String = "49.429017"
+const val foodtruckUrl: String = "https://www.craftplaces-business.com/api/locations/getTours.json" +
+        "?longitude=$longitude" +
+        "&latitude=$latitude" +
+        "&rd=2&version=2"
 
 fun main() {
     val httpClient = HttpClient(CIO) {
@@ -33,79 +36,39 @@ fun main() {
             getFoodtruckz(httpClient)
         }
 
-        val preparedString = withContext(Dispatchers.Default) {
-            prepareFoodtruckzString(foodtrucks)
-        }
+        val chatMessage = Mapper.mapToChatMessage(foodtrucks)
 
         withContext(Dispatchers.IO) {
-            postFoodtruckz(httpClient, preparedString)
+            postFoodtruckz(httpClient, chatMessage)
         }
     }
 }
 
 private suspend fun getFoodtruckz(httpClient: HttpClient): List<Foodtruck> {
-    val encoded: String = Base64.getEncoder()
+    // Encode string for basic auth
+    val auth: String = Base64.getEncoder()
         .encodeToString(
             ("token" + ":" + Keys.token).toByteArray(StandardCharsets.UTF_8)
         )
+
+    // Issue request
     val foodtruckzWrapper = httpClient.get<FoodtruckzWrapper> {
-        url(
-            "" +
-                    "https://www.craftplaces-business.com/api/locations/getTours.json" +
-                    "?longitude=$longitude" +
-                    "&latitude=$latitude" +
-                    "&rd=2&version=2"
-        )
+        url(foodtruckUrl)
         header(
             key = "Authorization",
-            value = "Basic $encoded"
+            value = "Basic $auth"
         )
     }
 
-    return mapFoodtruckz(foodtruckzWrapper)
-}
+    // Filter foodtrucks for specified date
+    val foodtrucksForToday = Mapper.filterForDate(
+        foodtruckzWrapper = foodtruckzWrapper,
+        from = ZonedDateTime.now(),
+        to = ZonedDateTime.now().plusDays(1)
+    )
 
-private fun mapFoodtruckz(foodtruckzWrapper: FoodtruckzWrapper): List<Foodtruck> {
-    val (tours, operators, _, _, _) = foodtruckzWrapper
-    val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
-    val dateFormatter = DateTimeFormatter.ofPattern("dd.MM", Locale.getDefault())
-
-    return tours
-        ?.filter {
-            val startDate = ZonedDateTime.parse(it.start)
-            startDate.isAfter(ZonedDateTime.now()) && startDate.isBefore(ZonedDateTime.now().plusDays(1))
-        }
-        ?.mapIndexed { index, toursItem ->
-            Foodtruck(
-                name = operators?.get(index)?.name ?: "",
-                description = operators?.get(index)?.description ?: "",
-                location = "" +
-                        "${toursItem.location?.name}\n" +
-                        "${toursItem.location?.zipcode} " +
-                        "${toursItem.location?.city}, \n" +
-                        "${toursItem.location?.street} " +
-                        "${toursItem.location?.number}",
-                time = timeFormatter.format(ZonedDateTime.parse(toursItem.start)) +
-                        " - " +
-                        timeFormatter.format(ZonedDateTime.parse(toursItem.end)) +
-                        " (${dateFormatter.format(ZonedDateTime.parse(toursItem.start))}.)"
-            )
-        }.orEmpty()
-}
-
-private suspend fun prepareFoodtruckzString(foodtrucks: List<Foodtruck>): String {
-    return withContext(Dispatchers.Default) {
-        val stringBuilder = StringBuilder()
-        foodtrucks.forEach {
-            stringBuilder.append("\n${it.name}\n${it.description}\n${it.location}\n${it.time}\n")
-        }
-
-        """
-            "{
-                "text": ":hamburger: ${stringBuilder.toString()}"
-            }"
-        """
-    }
+    // Map to local entities and return
+    return Mapper.mapToLocalEntityList(foodtrucksForToday)
 }
 
 private suspend fun postFoodtruckz(httpClient: HttpClient, post: String) {

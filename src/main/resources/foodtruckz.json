@@ -1,0 +1,323 @@
+{
+  "tours": [
+    {
+      "id": "bc12aa08c3a4ae17af7f2376382aa35c",
+      "operatorid": "885f001770731dbc3c5f4ad6ad1ee371",
+      "type": 1,
+      "name": "",
+      "description": "",
+      "start": "2020-02-11T11:00:00+01:00",
+      "end": "2020-02-11T13:30:00+01:00",
+      "timezone": "Europe\/Berlin",
+      "soldout": false,
+      "location": {
+        "name": "S\u00fcdwestpark",
+        "street": "Willst\u00e4tterstra\u00dfe",
+        "number": "40",
+        "zipcode": "90449",
+        "city": "N\u00fcrnberg",
+        "country_id": "572fe2a35bcd584f8d64f4053013782f",
+        "sponsor": "Kite electronics",
+        "map": {
+          "longitude": "11.016976453036591",
+          "latitude": "49.42720888776549",
+          "icon": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/logo\/d4963c84cdebedea05ea811f26dfef88.png",
+          "colors": {
+            "truck": "#fff",
+            "text": "#000"
+          }
+        },
+        "country": {
+          "id": "572fe2a35bcd584f8d64f4053013782f",
+          "iso": "de",
+          "address_type": "1",
+          "date_format": "d.m.Y",
+          "time_format": "H:i"
+        }
+      }
+    },
+    {
+      "id": "93ec82f362e0f518c9cbc83ca801b743",
+      "operatorid": "e319706e5e2c2a2414d5f457bd0abdd3",
+      "type": 1,
+      "name": "",
+      "description": "",
+      "start": "2020-02-12T11:00:00+01:00",
+      "end": "2020-02-12T13:30:00+01:00",
+      "timezone": "Europe\/Berlin",
+      "soldout": false,
+      "location": {
+        "name": "S\u00fcd-West-Park",
+        "street": "Willst\u00e4tterstra\u00dfe",
+        "number": "20",
+        "zipcode": "90449",
+        "city": "N\u00fcrnberg",
+        "country_id": "572fe2a35bcd584f8d64f4053013782f",
+        "sponsor": "S\u00fcd-West-Park",
+        "map": {
+          "longitude": "11.01765364408493",
+          "latitude": "49.428050986476414",
+          "icon": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/logo\/cafb62352e8ddc34bbb164d1b5499c49.png",
+          "colors": {
+            "truck": "#fff",
+            "text": "#000"
+          }
+        },
+        "country": {
+          "id": "572fe2a35bcd584f8d64f4053013782f",
+          "iso": "de",
+          "address_type": "1",
+          "date_format": "d.m.Y",
+          "time_format": "H:i"
+        }
+      }
+    },
+    {
+      "id": "c7ba07337817a3918e1cba3de659c47f",
+      "operatorid": "c42807b219273454ff315de1f532ede3",
+      "type": 1,
+      "name": "",
+      "description": "",
+      "start": "2020-02-13T11:30:00+01:00",
+      "end": "2020-02-13T13:30:00+01:00",
+      "timezone": "Europe\/Berlin",
+      "soldout": false,
+      "location": {
+        "name": "S\u00fcdwestpark",
+        "street": "Willst\u00e4tterstra\u00dfe",
+        "number": "40",
+        "zipcode": "90449",
+        "city": "N\u00fcrnberg",
+        "country_id": "572fe2a35bcd584f8d64f4053013782f",
+        "sponsor": "",
+        "map": {
+          "longitude": "11.01688696693418",
+          "latitude": "49.42724934494291",
+          "icon": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/logo\/23496bc9036a4705b4366a1cb4a9f69e.png",
+          "colors": {
+            "truck": "#fff",
+            "text": "#000"
+          }
+        },
+        "country": {
+          "id": "572fe2a35bcd584f8d64f4053013782f",
+          "iso": "de",
+          "address_type": "1",
+          "date_format": "d.m.Y",
+          "time_format": "H:i"
+        }
+      }
+    },
+    {
+      "id": "ebf0f26796963c7dbbc0a45396dfb2e1",
+      "operatorid": "a45d5c990a3ec0bee1348c77c2a31d21",
+      "type": 1,
+      "name": "",
+      "description": "",
+      "start": "2020-02-14T11:00:00+01:00",
+      "end": "2020-02-14T13:30:00+01:00",
+      "timezone": "Europe\/Berlin",
+      "soldout": false,
+      "location": {
+        "name": "S\u00fcd-West-Park",
+        "street": "Willst\u00e4tterstra\u00dfe",
+        "number": "40",
+        "zipcode": "90449",
+        "city": "N\u00fcrnberg",
+        "country_id": "572fe2a35bcd584f8d64f4053013782f",
+        "sponsor": "",
+        "map": {
+          "longitude": "11.016489999999976",
+          "latitude": "49.42713999999999",
+          "icon": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/logo\/34c35dbe3a28fa7f96f79483a63f0b4a.png",
+          "colors": {
+            "truck": "#000000",
+            "text": "#ffffff"
+          }
+        },
+        "country": {
+          "id": "572fe2a35bcd584f8d64f4053013782f",
+          "iso": "de",
+          "address_type": "1",
+          "date_format": "d.m.Y",
+          "time_format": "H:i"
+        }
+      }
+    },
+    {
+      "id": "ec470925051eff264f8644c124f107fb",
+      "operatorid": "22e0b94c5df2336e0b82ca750876d639",
+      "type": 1,
+      "name": "",
+      "description": "",
+      "start": "2020-02-17T11:00:00+01:00",
+      "end": "2020-02-17T13:30:00+01:00",
+      "timezone": "Europe\/Berlin",
+      "soldout": false,
+      "location": {
+        "name": "S\u00fcdwestpark",
+        "street": "Willst\u00e4tterstra\u00dfe",
+        "number": "40",
+        "zipcode": "90449",
+        "city": "N\u00fcrnberg",
+        "country_id": "572fe2a35bcd584f8d64f4053013782f",
+        "sponsor": "",
+        "map": {
+          "longitude": "11.016588542498312",
+          "latitude": "49.42712175618919",
+          "icon": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/logo\/d72928bdbae6e51c79d39fc85a7e1acb.png",
+          "colors": {
+            "truck": "#fff",
+            "text": "#000"
+          }
+        },
+        "country": {
+          "id": "572fe2a35bcd584f8d64f4053013782f",
+          "iso": "de",
+          "address_type": "1",
+          "date_format": "d.m.Y",
+          "time_format": "H:i"
+        }
+      }
+    }
+  ],
+  "operators": [
+    {
+      "id": "885f001770731dbc3c5f4ad6ad1ee371",
+      "name": "KOCHSTOLZ",
+      "nameShort": "KOCHSTOLZ",
+      "description": "Kreative, gesunde Food-Trends. \r\nVeganes\/vegetarisches Streetfood. Volles Geschmackserlebnis - ohne Fleisch! Neu - gesund - lecker!",
+      "url": "kochstolz",
+      "offer": "Shakshuka - leckeres Wohlf\u00fchlessen!",
+      "tags": [
+        "salads",
+        "sweets",
+        "vegan",
+        "vegetarian"
+      ],
+      "region": "Bayern",
+      "logo": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/entry\/d33c05b349342050492d026022b630d8.jpg",
+      "impressions": [
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/84435acfb5349d60b7226b0a1be44a26.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/c4b368141d9029df24abe2ad571065b7.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/252da2c0dba67e4c11e408200bc18c3f.jpg"
+      ],
+      "colors": {
+        "truck": "#fff",
+        "text": "#000"
+      },
+      "premium": false,
+      "name_url": "https:\/\/www.craftplaces.com\/de\/profil\/details\/kochstolz"
+    },
+    {
+      "id": "e319706e5e2c2a2414d5f457bd0abdd3",
+      "name": "Don Burrito",
+      "nameShort": "",
+      "description": "Leckerste Burritos in Town, Chili Bonanza, BBQ, Drunken Penautbutter, FAT Bastard und unseren veganen Barra Verde. Softdrinks von Coca Cola und NOW.",
+      "url": "don-burrito2",
+      "offer": "Mexican Food",
+      "tags": [
+        "mexican"
+      ],
+      "region": "N\u00fcrnberg",
+      "logo": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/entry\/c5c02e5a1d68f3ab0e99168198ad146c.png",
+      "impressions": [
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/f0f20a6ad27be47b8dc45c3a898296aa.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/af849ac792c236ba1ccf00c2a1630709.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/d105597782b60aa52707e6fb898e94af.jpg"
+      ],
+      "colors": {
+        "truck": "#fff",
+        "text": "#000"
+      },
+      "premium": false,
+      "name_url": "https:\/\/www.craftplaces.com\/de\/profil\/details\/don-burrito2"
+    },
+    {
+      "id": "c42807b219273454ff315de1f532ede3",
+      "name": "crunchy CRUST",
+      "nameShort": "crunchy CRUST",
+      "description": "Gerupftes Fleisch im Kartoffelteigbr\u00f6tchen mit Coleslaw nach Seychellenart und Salat. Die hausgemachten Toppings runden den Geschmack ab!\r\nAuch vegetarisch!",
+      "url": "crunchy-crust",
+      "offer": "Gerupftes Rind\/Schwein\/Pute",
+      "tags": [
+        "bbqGrill",
+        "burgerSandwiches",
+        "beveragesCoffee"
+      ],
+      "region": "Bayern",
+      "logo": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/entry\/db0a5cda1c09665b3d12443515669df7.jpg",
+      "impressions": [
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/d36dcf8f387f882cdd4bf640599d6d37.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/02cf04fdfb482344f084f4f49cb8e3f1.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/a3c322af6d23654ae5b4552d0b486da0.jpg"
+      ],
+      "colors": {
+        "truck": "#fff",
+        "text": "#000"
+      },
+      "premium": false,
+      "name_url": "https:\/\/www.craftplaces.com\/de\/profil\/details\/crunchy-crust"
+    },
+    {
+      "id": "a45d5c990a3ec0bee1348c77c2a31d21",
+      "name": "Guerilla Gr\u00f6stl Gourmet-Burger",
+      "nameShort": "Guerilla Gr\u00f6stl",
+      "description": "Leckere Gourmetburger aus saftigem Rindfleisch. \u00dcber offenem Feuer gegrillt mit handgemachten Buns und selbstgemachte Saucen.",
+      "url": "guerilla-groestl-gourmet-burger",
+      "offer": "Burger &amp; Gr\u00f6stl",
+      "tags": [
+        "burgerSandwiches"
+      ],
+      "region": "N\u00fcrnberg",
+      "logo": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/entry\/5f4e4c628e594a699e7aadd3a576fd36.png",
+      "impressions": [
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/889b4e87811e2decd78dba551ddcb831.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/d6041a6e5849dbfdf4dfb42ad831ecfc.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/846e709f2182f06ccd4b7553d661c9e9.jpg"
+      ],
+      "colors": {
+        "truck": "#000000",
+        "text": "#ffffff"
+      },
+      "premium": false,
+      "name_url": "https:\/\/www.craftplaces.com\/de\/profil\/details\/guerilla-groestl-gourmet-burger"
+    },
+    {
+      "id": "22e0b94c5df2336e0b82ca750876d639",
+      "name": "MAM MAM Burger &amp; Fritten",
+      "nameShort": "MAM MAM",
+      "description": "100% Frisch und Regional\r\nBurger aus fr\u00e4nkischem Black Angus Weiderind.\r\nFreilandhaltung auf saftigen fr\u00e4nkischen Wiesen sorgt f\u00fcr den besonderen Geschmack.",
+      "url": "mam-mam-burger-fritten",
+      "offer": "BURGER &amp; FRITTEN",
+      "tags": [
+        "burgerSandwiches"
+      ],
+      "region": "Bayern",
+      "logo": "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/entry\/825868037a739a80fd9d0f5a595ba87c.jpg",
+      "impressions": [
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/4549b136eb3b635b18cfda89b35c023e.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/f0e3d555ecee93a7deeffd78ac830e57.jpg",
+        "https:\/\/s3.eu-central-1.amazonaws.com\/food-truck-data-eu-central-1\/media\/operator\/impression\/91603c8772da1a6e2f38abecafef461f.jpg"
+      ],
+      "colors": {
+        "truck": "#fff",
+        "text": "#000"
+      },
+      "premium": false,
+      "name_url": "https:\/\/www.craftplaces.com\/de\/profil\/details\/mam-mam-burger-fritten"
+    }
+  ],
+  "error": false,
+  "message": "Et API, semper verum dicit.",
+  "code": "00",
+  "statistics": {
+    "running_time": 27.7669429779,
+    "unit": "ms",
+    "cached": "false",
+    "render_date": "2020-02-11T16:29:33+01:00",
+    "refresh_date": "2020-02-11T16:49:33+01:00",
+    "timezone": "Europe\/Berlin",
+    "ip-address": "62.216.205.43"
+  }
+}
