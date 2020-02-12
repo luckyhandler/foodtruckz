@@ -1,3 +1,4 @@
+import entity.ChatMessage
 import entity.Foodtruck
 import entity.FoodtruckzWrapper
 import io.ktor.client.HttpClient
@@ -36,7 +37,7 @@ fun main() {
             getFoodtruckz(httpClient)
         }
 
-        val chatMessage = foodtrucks.mapToChatMessage()
+        val chatMessage: ChatMessage = foodtrucks.mapToChatMessage()
 
         withContext(Dispatchers.IO) {
             postFoodtruckz(httpClient, chatMessage)
@@ -70,11 +71,11 @@ private suspend fun getFoodtruckz(httpClient: HttpClient): List<Foodtruck> {
     return foodtrucksForToday.mapToLocalEntityList()
 }
 
-private suspend fun postFoodtruckz(httpClient: HttpClient, post: String) {
-    httpClient.request<String> {
+private suspend fun postFoodtruckz(httpClient: HttpClient, chatMessage: ChatMessage) {
+    httpClient.request<ChatMessage> {
         this.method = HttpMethod.Post
         this.url(Hooks.hook)
         this.header("Content-Type", "application/json")
-        this.body = post
+        this.body = chatMessage
     }
 }

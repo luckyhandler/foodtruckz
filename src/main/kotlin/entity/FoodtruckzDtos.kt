@@ -68,3 +68,7 @@ data class Colors(
     val truck: String?,
     val text: String?
 )
+
+data class ChatMessage(
+    val text: String?
+)

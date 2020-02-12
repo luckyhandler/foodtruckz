@@ -1,10 +1,10 @@
-import entity.Foodtruck
-import entity.FoodtruckzWrapper
-import entity.OperatorsItem
-import entity.ToursItem
+import com.google.gson.Gson
+import entity.*
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
+
+val gson = Gson()
 
 fun FoodtruckzWrapper.filterForDate(from: ZonedDateTime, to: ZonedDateTime): FoodtruckzWrapper {
     val tours = this.tours?.filter { tour: ToursItem ->
@@ -46,11 +46,12 @@ fun FoodtruckzWrapper.mapToLocalEntityList(): List<Foodtruck> {
         }.orEmpty()
 }
 
-fun List<Foodtruck>.mapToChatMessage(): String {
+fun List<Foodtruck>.mapToChatMessage(): ChatMessage {
     val stringBuilder = StringBuilder()
     this.forEach {
         stringBuilder.append("\n${it.name}\n${it.description}\n${it.location}\n${it.time}\n")
     }
 
-    return """{"text": ":hamburger: $stringBuilder"}"""
+    return gson.fromJson("""{"text": ":hamburger: $stringBuilder"}""", ChatMessage::class.java)
+        ?: throw IllegalStateException("Mapping the chatMessage string to a ChatMessage object failed")
 }

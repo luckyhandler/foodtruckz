@@ -1,4 +1,6 @@
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import entity.ChatMessage
 import entity.Foodtruck
 import entity.FoodtruckzWrapper
 import io.ktor.client.HttpClient
@@ -99,15 +101,8 @@ internal class FoodtruckzKtTest {
             val response: FoodtruckzWrapper = client.get(foodtruckUrl)
             val foodtrucks = response.mapToLocalEntityList()
 
-            val foodtruckzMessage: String = foodtrucks.mapToChatMessage()
-
-            assert(!foodtruckzMessage.isBlank())
-            val chatMessage = Gson().fromJson<ChatMessage>(foodtruckzMessage, ChatMessage::class.java)
-            assert(chatMessage != null)
+            val foodtruckzMessage: ChatMessage = foodtrucks.mapToChatMessage()
+            assert(!foodtruckzMessage.text.isNullOrBlank())
         }
     }
-
-    data class ChatMessage(
-        val text: String?
-    )
 }
