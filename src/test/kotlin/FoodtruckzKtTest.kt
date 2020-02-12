@@ -42,10 +42,10 @@ internal class FoodtruckzKtTest {
     fun `json should be correctly parsed`() {
         runBlocking {
             val response: FoodtruckzWrapper = client.get(foodtruckUrl)
-            assert(!response.error)
+            assert(!(response.error ?: false))
             assert(response.tours != null)
             assert(response.tours!!.isNotEmpty())
-            assert(response.operators?.size == response.tours.size)
+            assert(response.operators?.size == response.tours?.size)
         }
     }
 
@@ -53,7 +53,7 @@ internal class FoodtruckzKtTest {
     fun `dtos should be correctly mapped to local objects`() {
         runBlocking {
             val response: FoodtruckzWrapper = client.get(foodtruckUrl)
-            val foodtrucks: List<Foodtruck> = Mapper.mapToLocalEntityList(response)
+            val foodtrucks: List<Foodtruck> = response.mapToLocalEntityList()
             assert(foodtrucks.isNotEmpty())
             foodtrucks.forEach { (name, description, location, time) ->
                 assert(name.isNotEmpty())
@@ -66,11 +66,25 @@ internal class FoodtruckzKtTest {
     }
 
     @Test
+    fun `mapping to local entities should be null safe`() {
+        runBlocking {
+            val response: FoodtruckzWrapper = FoodtruckzWrapper(
+                tours = null,
+                operators = null,
+                error = null,
+                message = null,
+                code = null
+            )
+            val foodtrucks: List<Foodtruck> = response.mapToLocalEntityList()
+            assert(foodtrucks.isEmpty())
+        }
+    }
+
+    @Test
     fun `dtos should be correctly filtered for specified date`() {
         runBlocking {
             val response: FoodtruckzWrapper = client.get(foodtruckUrl)
-            val foodtrucksForToday: FoodtruckzWrapper = Mapper.filterForDate(
-                foodtruckzWrapper = response,
+            val foodtrucksForToday: FoodtruckzWrapper = response.filterForDate(
                 from = ZonedDateTime.parse("2020-02-11T00:00:00+01:00"),
                 to = ZonedDateTime.parse("2020-02-11T00:00:00+01:00").plusDays(1)
             )
@@ -83,9 +97,9 @@ internal class FoodtruckzKtTest {
     fun `local entities should be correctly mapped into a chat message`() {
         runBlocking {
             val response: FoodtruckzWrapper = client.get(foodtruckUrl)
-            val foodtrucks = Mapper.mapToLocalEntityList(response)
+            val foodtrucks = response.mapToLocalEntityList()
 
-            val foodtruckzMessage: String = Mapper.mapToChatMessage(foodtrucks)
+            val foodtruckzMessage: String = foodtrucks.mapToChatMessage()
 
             assert(!foodtruckzMessage.isBlank())
             val chatMessage = Gson().fromJson<ChatMessage>(foodtruckzMessage, ChatMessage::class.java)

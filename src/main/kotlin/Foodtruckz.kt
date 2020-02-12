@@ -36,7 +36,7 @@ fun main() {
             getFoodtruckz(httpClient)
         }
 
-        val chatMessage = Mapper.mapToChatMessage(foodtrucks)
+        val chatMessage = foodtrucks.mapToChatMessage()
 
         withContext(Dispatchers.IO) {
             postFoodtruckz(httpClient, chatMessage)
@@ -61,14 +61,13 @@ private suspend fun getFoodtruckz(httpClient: HttpClient): List<Foodtruck> {
     }
 
     // Filter foodtrucks for specified date
-    val foodtrucksForToday = Mapper.filterForDate(
-        foodtruckzWrapper = foodtruckzWrapper,
+    val foodtrucksForToday = foodtruckzWrapper.filterForDate(
         from = ZonedDateTime.now(),
         to = ZonedDateTime.now().plusDays(1)
     )
 
     // Map to local entities and return
-    return Mapper.mapToLocalEntityList(foodtrucksForToday)
+    return foodtrucksForToday.mapToLocalEntityList()
 }
 
 private suspend fun postFoodtruckz(httpClient: HttpClient, post: String) {

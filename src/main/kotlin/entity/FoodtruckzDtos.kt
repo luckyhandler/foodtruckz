@@ -3,7 +3,7 @@ package entity
 data class FoodtruckzWrapper(
     val tours: List<ToursItem>?,
     val operators: List<OperatorsItem>?,
-    val error: Boolean,
+    val error: Boolean?,
     val message: String?,
     val code: String?
 )
