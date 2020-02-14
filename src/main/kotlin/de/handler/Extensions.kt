@@ -51,12 +51,17 @@ fun FoodtruckzWrapper.mapToLocalEntityList(): List<Foodtruck> {
 
 fun List<Foodtruck>.mapToChatMessage(): ChatMessage {
     val stringBuilder = StringBuilder()
-    this.forEach {
-        stringBuilder.append("\n\n**${it.name}**\n\n${it.description}\n\n${it.location}\n\n${it.time}\n\n${it.url}\n\n")
+    if (this.isEmpty()) {
+        stringBuilder.append("**Heute gibt es leider keine Foodtrucks**   :cry:   ")
+    } else {
+        stringBuilder.append("**Foodtrucks heute**   :hamburger:   ")
+        this.forEach {
+            stringBuilder.append("\n\n**${it.name}**\n\n${it.description}\n\n${it.location}\n\n${it.time}\n\n${it.url}\n\n")
+        }
     }
 
     return gson.fromJson(
-        """{"text":  "**Foodtrucks heute**   :hamburger:   $stringBuilder"}""".trimMargin(),
+        """{"text":  "$stringBuilder"}""".trimMargin(),
         ChatMessage::class.java
     )
         ?: throw IllegalStateException("Mapping the chatMessage string to a ChatMessage object failed")
