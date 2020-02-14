@@ -1,8 +1,8 @@
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import entity.ChatMessage
-import entity.Foodtruck
-import entity.FoodtruckzWrapper
+package de.handler
+
+import de.handler.entity.ChatMessage
+import de.handler.entity.Foodtruck
+import de.handler.entity.FoodtruckzWrapper
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond

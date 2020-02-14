@@ -1,4 +1,4 @@
-package entity
+package de.handler.entity
 
 data class Foodtruck(
     val name: String,

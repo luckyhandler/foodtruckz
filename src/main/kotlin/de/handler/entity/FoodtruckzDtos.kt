@@ -1,4 +1,4 @@
-package entity
+package de.handler.entity
 
 data class FoodtruckzWrapper(
     val tours: List<ToursItem>?,

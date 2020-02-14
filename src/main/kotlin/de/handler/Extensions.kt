@@ -1,5 +1,7 @@
+package de.handler
+
 import com.google.gson.Gson
-import entity.*
+import de.handler.entity.*
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*

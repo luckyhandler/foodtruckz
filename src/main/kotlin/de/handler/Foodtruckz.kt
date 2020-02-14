@@ -1,12 +1,13 @@
-import entity.ChatMessage
-import entity.Foodtruck
-import entity.FoodtruckzWrapper
+package de.handler
+
+import de.handler.entity.ChatMessage
+import de.handler.entity.Foodtruck
+import de.handler.entity.FoodtruckzWrapper
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.features.json.GsonSerializer
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.request.*
-import io.ktor.http.HttpMethod
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
