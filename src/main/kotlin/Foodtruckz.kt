@@ -5,10 +5,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.features.json.GsonSerializer
 import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.request.get
-import io.ktor.client.request.header
-import io.ktor.client.request.request
-import io.ktor.client.request.url
+import io.ktor.client.request.*
 import io.ktor.http.HttpMethod
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -72,9 +69,7 @@ private suspend fun getFoodtruckz(httpClient: HttpClient): List<Foodtruck> {
 }
 
 private suspend fun postFoodtruckz(httpClient: HttpClient, chatMessage: ChatMessage) {
-    httpClient.request<ChatMessage> {
-        this.method = HttpMethod.Post
-        this.url(Hooks.hook)
+    httpClient.post<Unit>(Hooks.hook) {
         this.header("Content-Type", "application/json")
         this.body = chatMessage
     }

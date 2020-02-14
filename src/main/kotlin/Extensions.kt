@@ -41,7 +41,8 @@ fun FoodtruckzWrapper.mapToLocalEntityList(): List<Foodtruck> {
                 time = timeFormatter.format(ZonedDateTime.parse(toursItem.start)) +
                         " - " +
                         timeFormatter.format(ZonedDateTime.parse(toursItem.end)) +
-                        " (${dateFormatter.format(ZonedDateTime.parse(toursItem.start))}.)"
+                        " (${dateFormatter.format(ZonedDateTime.parse(toursItem.start))}.)",
+                url = operators?.get(index)?.name_url ?: ""
             )
         }.orEmpty()
 }
@@ -49,9 +50,12 @@ fun FoodtruckzWrapper.mapToLocalEntityList(): List<Foodtruck> {
 fun List<Foodtruck>.mapToChatMessage(): ChatMessage {
     val stringBuilder = StringBuilder()
     this.forEach {
-        stringBuilder.append("\n${it.name}\n${it.description}\n${it.location}\n${it.time}\n")
+        stringBuilder.append("\n\n**${it.name}**\n\n${it.description}\n\n${it.location}\n\n${it.time}\n\n${it.url}\n\n")
     }
 
-    return gson.fromJson("""{"text": ":hamburger: $stringBuilder"}""", ChatMessage::class.java)
+    return gson.fromJson(
+        """{"text":  "**Foodtrucks heute**   :hamburger:   $stringBuilder"}""".trimMargin(),
+        ChatMessage::class.java
+    )
         ?: throw IllegalStateException("Mapping the chatMessage string to a ChatMessage object failed")
 }

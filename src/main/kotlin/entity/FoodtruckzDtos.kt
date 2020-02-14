@@ -61,7 +61,7 @@ data class OperatorsItem(
     val impressions: List<String>?,
     val colors: Colors?,
     val premium: Boolean?,
-    val nameUrl: String?
+    val name_url: String?
 )
 
 data class Colors(
