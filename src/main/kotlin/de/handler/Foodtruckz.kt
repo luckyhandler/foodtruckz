@@ -3,10 +3,9 @@ package de.handler
 import de.handler.entity.ChatMessage
 import de.handler.entity.Foodtruck
 import de.handler.entity.FoodtruckzWrapper
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
-import io.ktor.client.features.json.GsonSerializer
-import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.*
+import io.ktor.client.engine.cio.*
+import io.ktor.client.features.json.*
 import io.ktor.client.request.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -38,7 +37,8 @@ fun main() {
         val chatMessage: ChatMessage = foodtrucks.mapToChatMessage()
 
         withContext(Dispatchers.IO) {
-            postFoodtruckz(httpClient, chatMessage)
+            //postFoodtruckz(httpClient, chatMessage)
+            println(chatMessage)
         }
     }
 }
@@ -60,9 +60,10 @@ private suspend fun getFoodtruckz(httpClient: HttpClient): List<Foodtruck> {
     }
 
     // Filter foodtrucks for specified date
+    val now = ZonedDateTime.now()
     val foodtrucksForToday = foodtruckzWrapper.filterForDate(
-        from = ZonedDateTime.now(),
-        to = ZonedDateTime.now().plusDays(1)
+        from = ZonedDateTime.of(now.year, now.monthValue, now.dayOfMonth, 10, 0, 0, 0, now.zone),
+        to = ZonedDateTime.of(now.year, now.monthValue, now.dayOfMonth, 15, 0, 0, 0, now.zone).plusDays(1)
     )
 
     // Map to local entities and return
